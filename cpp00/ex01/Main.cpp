@@ -6,14 +6,14 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 23:19:59 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/02/20 23:30:20 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/02/21 20:18:01 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int main(void)
-{
+int main(void) {
+
 	PhoneBook phonebook;
 
 	phonebook.run();
