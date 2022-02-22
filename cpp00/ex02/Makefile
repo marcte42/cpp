@@ -6,14 +6,14 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/02/22 15:47:37 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/02/22 16:54:31 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bank
 
 CC      = g++
-CFLAGS = -std=c++98 -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 SRCS =          tests.cpp \
 				Account.cpp \
