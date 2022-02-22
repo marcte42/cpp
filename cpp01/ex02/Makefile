@@ -6,19 +6,16 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/02/22 22:05:56 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/02/22 22:36:02 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex
 
 CC      = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
-				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
