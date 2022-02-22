@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 21:13:59 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/02/22 00:05:46 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/02/22 13:24:46 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,20 @@ void	PhoneBook::_addEntry(void) {
 		this->_nb_contacts++;
 	}
 	else {
-		std::cin.ignore();
-		std::cout << "Error while adding new contact !" << std::endl;
+		std::cout << std::endl << "Error while adding new contact !" << std::endl;
 	}
 }
 
 void	PhoneBook::_showEntries(void) {
 
-	std::cout << "-----INDEX--FIRSTNAME---LASTNAME---NICKNAME" << std::endl;
+	std::cout << std::endl << "-----INDEX--FIRSTNAME---LASTNAME---NICKNAME" << std::endl;
 	for (int i = 0; i < this->_nb_contacts; i++) {
 		std::cout << std::setw(10) << i + 1;
 		std::cout << "|";
 		this->_contacts[i].display_grid();
 		std::cout << std::endl;
 	}
-	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << "-------------------------------------------" << std::endl << std::endl;
 }
 
 void	PhoneBook::_search(void) {

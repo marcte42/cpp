@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 21:13:59 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/02/22 00:03:13 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/02/22 13:04:10 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ bool Contact::init(void) {
 
 void Contact::display_full(void) {
 
-	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << std::endl << "-------------------------------------------" << std::endl;
 	std::cout << std::setw(20) << "First Name: " << this->_first_name << std::endl;
 	std::cout << std::setw(20) << "Last Name: " << this->_last_name << std::endl;
 	std::cout << std::setw(20) << "Nickname: " << this->_nickname << std::endl;
 	std::cout << std::setw(20) << "Phone Number: " << this->_phone_number << std::endl;
 	std::cout << std::setw(20) << "Darkest Secret: " << this->_darkest_secret << std::endl;
-	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << "-------------------------------------------" << std::endl << std::endl;
 }
 
 void Contact::display_grid(void) {
