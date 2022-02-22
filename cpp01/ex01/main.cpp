@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:34:28 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/02/22 21:47:01 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/02/22 22:07:56 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 int main(void)
 {
-	Zombie*	heap = newZombie("Alfred");
-	heap->announce();
-
-	Zombie	stack;
-	stack.setName("Louis");
-	stack.announce();
-	
-	randomChump("Jim");
-
-	delete heap;
+	Zombie*	horde = zombieHorde(12, "Smith");
+	for (int i = 0; i < 12; i++)
+		horde[3].announce();
 	return (0);
 }
