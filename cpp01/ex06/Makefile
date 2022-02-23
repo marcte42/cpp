@@ -6,11 +6,11 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/02/23 23:24:41 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/02/24 00:01:13 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex
+NAME = karenFilter
 
 CC      = g++
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
