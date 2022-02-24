@@ -19,7 +19,7 @@ class Fixed
 
 	private:
 		int					_rawBits;
-		static int const	_bitsCount = 8;
+		static int const	_bitsCount;
 };
 
 #endif
