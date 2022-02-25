@@ -151,13 +151,3 @@ std::ostream&	operator<<( std::ostream &ofs, Fixed const & rhs ) {
 	ofs << rhs.toFloat();
 	return (ofs);
 }
-
-
-
-// 0 0 0 0 0 0 0 0    0 0 0 0 0 0 0 0    0 0 0 0 0 0 0 0  .  0 0 0 0 0 0 2 0
-
-// 3 2 1 0 -1 -2
-// 8 4 2 1  
-
-//  -4 + 0 + 1 + 1/2
-// 0 1 0 1 1
