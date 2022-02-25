@@ -15,20 +15,33 @@ class Fixed
 		Fixed(Fixed const & src);
 		~Fixed();
 
-		int 	getRawBits( void ) const;
-		void 	setRawBits( int const raw );
+		int 					getRawBits( void ) const;
+		void 					setRawBits( int const raw );
 
-		float 	toFloat( void ) const;
-		int 	toInt( void ) const;
+		float 					toFloat( void ) const;
+		int 					toInt( void ) const;
+		static Fixed &			min(Fixed& first, Fixed& second);
+		static Fixed const &	min(Fixed const & first, Fixed const & second);
+		static Fixed &			max(Fixed& first, Fixed& second);
+		static Fixed const &	max(Fixed const & first, Fixed const & second);
 
-		Fixed&	operator=( Fixed const & rhs );
+		Fixed&					operator=( Fixed const & rhs );
 
-		bool	operator<( Fixed const & rhs );
-		bool	operator>( Fixed const & rhs );
-		bool	operator>=( Fixed const & rhs );
-		bool	operator<=( Fixed const & rhs );
-		bool	operator==( Fixed const & rhs );
-		bool	operator!=( Fixed const & rhs );
+		Fixed					operator-( Fixed const & rhs ) const;
+		Fixed					operator*( Fixed const & rhs ) const;
+		Fixed					operator+( Fixed const & rhs ) const;
+		Fixed					operator/( Fixed const & rhs ) const;
+		Fixed&					operator++();
+		Fixed					operator++(int);
+		Fixed&					operator--();
+		Fixed					operator--(int);
+
+		bool					operator<( Fixed const & rhs ) const;
+		bool					operator>( Fixed const & rhs ) const;
+		bool					operator>=( Fixed const & rhs ) const;
+		bool					operator<=( Fixed const & rhs ) const;
+		bool					operator==( Fixed const & rhs ) const;
+		bool					operator!=( Fixed const & rhs ) const;
 
 	private:
 		int					_rawBits;
