@@ -6,7 +6,7 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/02/24 20:43:42 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/02/25 12:57:50 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC      = g++
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
-				Fixed.cpp
+				Fixed.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
