@@ -7,11 +7,9 @@ Point::Point(float const x, float const y) : _x(x), _y(y) {
 }
 
 Point::Point(const Fixed &fixedX, const Fixed &fixedY) : _x(fixedX), _y(fixedY) {
-
 }
 
 Point::Point(const Point &src) : _x(src._x), _y(src._y) {
-	
 }
 
 Point::~Point() {
