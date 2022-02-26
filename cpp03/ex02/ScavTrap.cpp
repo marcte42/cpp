@@ -31,25 +31,6 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &rhs) {
 	return *this;
 }
 
-void	ScavTrap::attack(const std::string &target) {
-	if (this->_hitPoints <= 0 || this->_energyPoints <= 0)
-	{
-		std::cout << "ScavTrap " << this->_name << " can't attack anymore..." << std::endl;
-		return;
-	}
-	this->_energyPoints--;
-	std::cout << "ScavTrap " << this->_name << " attacks " << target
-		<<", causing " << this->_attackDamage << " points of damage!" << std::endl;
-}
-void	ScavTrap::takeDamage(unsigned int amount) {
-	this->_hitPoints -= amount;
-	std::cout << "ScavTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
-}
-void	ScavTrap::beRepaired(unsigned int amount) {
-	this->_hitPoints += amount;
-	std::cout << "ScavTrap " << this->_name << " repaired " << amount << " hitpoints!" << std::endl;
-}
-
 void	ScavTrap::guardGate() {
 	std::cout << "ScavTrap " << this->_name << " entered Gatekeeping mode!" << std::endl;
 }
