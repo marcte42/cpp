@@ -6,7 +6,7 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/02/25 21:41:47 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/02/26 11:57:09 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
 				ClapTrap.cpp \
+				ScavTrap.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

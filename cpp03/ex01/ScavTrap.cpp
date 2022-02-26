@@ -1,18 +1,16 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() :
-	_name("Default"),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0) {
+ScavTrap::ScavTrap() : ClapTrap("Default") {
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage =200;
 	std::cout << "ScavTrap " << this->_name << " entered the ring !" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) :
-	_name(name),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) { 
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 200;
 	std::cout << "ScavTrap " << this->_name << " entered the ring !" << std::endl;
 }
 
@@ -33,22 +31,6 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &rhs) {
 	return *this;
 }
 
-std::string	ScavTrap::getName() const {
-	return this->_name;
-}
-
-int	ScavTrap::getHitPoints() const {
-	return this->_hitPoints;
-}
-
-int	ScavTrap::getEnergyPoints() const {
-	return this->_energyPoints;
-}
-
-int	ScavTrap::getAttackDamage() const {
-	return this->_attackDamage;
-}
-
 void	ScavTrap::attack(const std::string &target) {
 	if (this->_hitPoints <= 0 || this->_energyPoints <= 0)
 	{
@@ -66,4 +48,8 @@ void	ScavTrap::takeDamage(unsigned int amount) {
 void	ScavTrap::beRepaired(unsigned int amount) {
 	this->_hitPoints += amount;
 	std::cout << "ScavTrap " << this->_name << " repaired " << amount << " hitpoints!" << std::endl;
+}
+
+void	ScavTrap::guardGate() {
+	std::cout << "ScavTrap " << this->_name << " entered Gatekeeping mode!" << std::endl;
 }
