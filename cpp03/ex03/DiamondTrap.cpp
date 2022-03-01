@@ -1,16 +1,17 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("Default") {
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage =30;
+DiamondTrap::DiamondTrap() : ClapTrap(),ScavTrap(), FragTrap() {
+	this->_name = "Default";
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "DiamondTrap " << this->_name << " entered the ring !" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name) { 
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+DiamondTrap::DiamondTrap(std::string name) : FragTrap(name), ScavTrap(name) {
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "DiamondTrap " << this->_name << " entered the ring !" << std::endl;
 }
 
@@ -23,10 +24,10 @@ DiamondTrap::~DiamondTrap() {
 }
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &rhs) {
-	this->_name = rhs.getName();
-	this->_hitPoints = rhs.getHitPoints();
-	this->_energyPoints = rhs.getEnergyPoints();
-	this->_attackDamage = rhs.getAttackDamage();
+	this->_name = rhs._name;
+	this->_hitPoints = rhs._hitPoints;
+	this->_energyPoints = rhs._energyPoints;
+	this->_attackDamage = rhs._attackDamage;
 
 	return *this;
 }

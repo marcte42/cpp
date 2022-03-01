@@ -21,14 +21,9 @@ int main()
 	FragTrap vim("Vim");
 	std::cout << "-------------------------------" << std::endl;
 
+	tim.attack("Robert");
 	jim.attack("Robert");
-	jim.takeDamage(7);
-	jim.takeDamage(7);
-	jim.guardGate();
-	jim.attack("Robert");
-	jim.beRepaired(20);
-	jim.attack("Robert");
-	jim.attack("Robert");
+	vim.attack("Robert");
 	std::cout << "-------------------------------" << std::endl;
 	ft_checker_copy(tim);
 	std::cout << "-------------------------------" << std::endl;

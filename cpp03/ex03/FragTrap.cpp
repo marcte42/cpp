@@ -3,7 +3,7 @@
 FragTrap::FragTrap() : ClapTrap("Default") {
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
-	this->_attackDamage =30;
+	this->_attackDamage = 30;
 	std::cout << "FragTrap " << this->_name << " entered the ring !" << std::endl;
 }
 
