@@ -17,8 +17,6 @@ class Cat : public Animal {
 
 		void makeSound() const;
 
-	private:
-
 };
 
 std::ostream &			operator<<( std::ostream & o, Cat const & i );
