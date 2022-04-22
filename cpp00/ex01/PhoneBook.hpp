@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:56:18 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/02/22 13:01:14 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/04/22 18:30:54 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <limits>
 # include "Contact.hpp"
 
+# define MAX_CONTACTS 3
+
 class PhoneBook {
 	public:
 		PhoneBook(void);
@@ -26,6 +28,7 @@ class PhoneBook {
 	private:
 		Contact _contacts[8];
 		int		_nb_contacts;
+		int		_save_index;
 
 		void	_addEntry(void);
 		void	_search(void);

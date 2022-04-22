@@ -6,22 +6,18 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 21:13:59 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/02/22 13:24:46 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/04/22 18:35:01 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) {
-
-	this->_nb_contacts = 0;
+PhoneBook::PhoneBook(void) : _nb_contacts(0), _save_index(0) {
+	
 	std::cout << "Welcome to Phonebook !" << std::endl;
 }
 
-PhoneBook::~PhoneBook(void) {
-
-	std::cout << "Thanks for using Phonebook !" << std::endl;
-}
+PhoneBook::~PhoneBook(void) {}
 
 void	PhoneBook::run(void) {
 
@@ -33,9 +29,9 @@ void	PhoneBook::run(void) {
 		if (std::cin.bad() || std::cin.eof())
 			break ;
 		if (cmd.compare("ADD") == 0)
-			this->_addEntry();
+			_addEntry();
 		else if (cmd.compare("SEARCH") == 0)
-			this->_search();
+			_search();
 		else if (cmd.compare("EXIT") == 0)
 			return ;
 	}
@@ -43,13 +39,12 @@ void	PhoneBook::run(void) {
 
 void	PhoneBook::_addEntry(void) {
 
-	if (this->_nb_contacts >= 8) {
-		std::cout << "You reached the hard limit of 8 contacts..." << std::endl;
-		return ;
-	}
-	if (this->_contacts[this->_nb_contacts].init()) {
+	if (_contacts[_save_index].init()) {
 		std::cout << "Contact was successfully added !" << std::endl;
-		this->_nb_contacts++;
+		if (_nb_contacts < MAX_CONTACTS)
+			_nb_contacts++;
+		_save_index++;
+		_save_index %= MAX_CONTACTS;
 	}
 	else {
 		std::cout << std::endl << "Error while adding new contact !" << std::endl;
@@ -59,10 +54,10 @@ void	PhoneBook::_addEntry(void) {
 void	PhoneBook::_showEntries(void) {
 
 	std::cout << std::endl << "-----INDEX--FIRSTNAME---LASTNAME---NICKNAME" << std::endl;
-	for (int i = 0; i < this->_nb_contacts; i++) {
+	for (int i = 0; i < _nb_contacts; i++) {
 		std::cout << std::setw(10) << i + 1;
 		std::cout << "|";
-		this->_contacts[i].display_grid();
+		_contacts[i].display_grid();
 		std::cout << std::endl;
 	}
 	std::cout << "-------------------------------------------" << std::endl << std::endl;
@@ -71,19 +66,19 @@ void	PhoneBook::_showEntries(void) {
 void	PhoneBook::_search(void) {
 
 	int	index;
-	if (this->_nb_contacts == 0) {
+	if (_nb_contacts == 0) {
 		std::cout << "No contacts yet !" << std::endl;
 		return ;
 	}
 	_showEntries();
 	std::cout << "Enter contact index : ";
 	std::cin >> index;
-	if (std::cin.bad() || std::cin.eof() || std::cin.fail() || index < 1 || index > this->_nb_contacts) {
+	if (std::cin.bad() || std::cin.eof() || std::cin.fail() || index < 1 || index > _nb_contacts) {
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Index out of range" << std::endl;
 		return ;
 	}
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	this->_contacts[index - 1].display_full();
+	_contacts[index - 1].display_full();
 }
