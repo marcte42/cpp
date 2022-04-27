@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:42:53 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/04/27 20:55:50 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/04/27 21:21:31 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,13 @@ void	Bureaucrat::decrementGrade() {
 }
 
 void		Bureaucrat::signForm(Form &form) {
-	if (form.getSignGrade() >= _grade)
-		std::cout << _name << " signed " << form.getName() << std::endl;
-	else
-		throw Form::GradeTooLowException();
+	try {
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e){
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw() {

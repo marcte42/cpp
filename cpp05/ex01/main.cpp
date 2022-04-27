@@ -12,23 +12,17 @@ int main()
 	Form f3("C21", 150, 3);
 
 	std::cout << std::endl << "----------------------------" << std::endl << std::endl;
-	try {
-		std::cout << b1 << std::endl;
-		std::cout << f1 << std::endl;
-		b1.signForm(f1);
-	}
-	catch (std::exception &e) {
-		std::cout << "Exception raised: " << e.what() << std::endl;
-	}
+
+	std::cout << b1 << std::endl;
+	std::cout << f1 << std::endl;
+	b1.signForm(f1);
+
 	std::cout << std::endl << "----------------------------" << std::endl << std::endl;
-	try {
-		std::cout << b2 << std::endl;
-		std::cout << f2 << std::endl;
-		b2.signForm(f2);
-	}
-	catch (std::exception &e) {
-		std::cout << "Exception raised: " << e.what() << std::endl;
-	}
+
+	std::cout << b2 << std::endl;
+	std::cout << f2 << std::endl;
+	b2.signForm(f2);
+
 	std::cout << std::endl << "----------------------------" << std::endl << std::endl;
 	try {
 		Form f_bad("Bad", -1, 155);
