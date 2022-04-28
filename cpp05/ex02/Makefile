@@ -6,7 +6,7 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/04/28 13:01:02 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/04/28 13:25:20 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
 				Bureaucrat.cpp \
+				Form.cpp \
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
