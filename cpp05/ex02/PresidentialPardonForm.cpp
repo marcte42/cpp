@@ -25,6 +25,6 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm
 	return *this;
 }
 
-void	PresidentialPardonForm::action(Bureaucrat const & executor) const {
-	std::cout << "Presidential Pardon executed by " << executor.getName() << std::endl;
+void	PresidentialPardonForm::action() const {
+	std::cout << this->getTarget() << " was pardoned by Zaphod Beeblebrox" << std::endl;
 }

@@ -25,6 +25,11 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 	return *this;
 }
 
-void	RobotomyRequestForm::action(Bureaucrat const & executor) const {
-	std::cout << "Robotomy Request executed by " << executor.getName() << std::endl;
+void	RobotomyRequestForm::action() const {
+	std::cout << "Brrrrrrrrr... bzzz... bzzz... " << std::endl;
+	srand(time(NULL));
+	if (rand() % 2)
+		std::cout << this->getTarget() << " was successfully robotomised" << std::endl;
+	else
+		std::cout << "Filed to robotomised "  << this->getTarget() << std::endl;
 }

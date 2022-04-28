@@ -45,7 +45,7 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
 
 void Form::execute(Bureaucrat const & executor) const {
 	if (_signed && _executeGrade >= executor.getGrade())
-		this->action(executor);
+		this->action();
 	else
 		throw Form::GradeTooLowException();
 }

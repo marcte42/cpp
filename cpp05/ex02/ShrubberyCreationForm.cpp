@@ -25,6 +25,23 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return *this;
 }
 
-void	ShrubberyCreationForm::action(Bureaucrat const & executor) const {
-	std::cout << "Shrubbery Request executed by " << executor.getName() << std::endl;
+void	ShrubberyCreationForm::action() const {
+	std::fstream    file;
+
+    file.open((this->getTarget() + std::string("_shrubbery")).c_str(), std::ios::out);
+    if (!file)
+    {
+        std::cerr << "Unable to open " << (this->getTarget() + std::string("_shrubbery")) << '\n';
+        return ;
+    }
+    file << "       _-_\n\
+    /~~   ~~\\\n\
+ /~~         ~~\\\n\
+{               }\n\
+ \\  _-     -_  /\n\
+   ~  \\\\ //  ~\n\
+_- -   | | _- _\n\
+  _ -  | |   -_\n\
+      // \\\\\n";
+    file.close();
 }

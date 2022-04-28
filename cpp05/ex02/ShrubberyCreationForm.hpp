@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:40:33 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/04/28 13:08:12 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/04/28 13:49:34 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 # include "Form.hpp"
 
 class ShrubberyCreationForm : public Form
@@ -27,7 +28,7 @@ class ShrubberyCreationForm : public Form
 
 		virtual ShrubberyCreationForm 		&operator=(const ShrubberyCreationForm &rhs);
 
-		virtual void	action(Bureaucrat const & executor) const;
+		virtual void	action() const;
 };
 
 #endif
