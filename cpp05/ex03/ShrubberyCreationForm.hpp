@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:40:33 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/04/28 13:49:34 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/05/03 20:27:47 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ShrubberyCreationForm : public Form
 	public:
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const &src);
+		ShrubberyCreationForm(const ShrubberyCreationForm &src);
 		virtual ~ShrubberyCreationForm();
 
 		virtual ShrubberyCreationForm 		&operator=(const ShrubberyCreationForm &rhs);

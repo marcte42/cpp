@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:40:33 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/04/28 14:39:30 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/05/03 20:42:30 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,11 @@ class Intern
 		Intern	&operator=(Intern const &rhs);
 		Form	*makeForm(const std::string form, const std::string target) const;
 
-	private:
-
-		struct s_form {
-			std::string name;
-			Form *(*(fptr)) (const std::string &) const;
+		struct		FormNotFoundException: public std::exception {
+			virtual const char	*what() const throw();
 		};
-		s_form _forms[3];
+
+	private:
 };
 
 #endif

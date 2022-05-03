@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:42:53 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/04/28 14:45:21 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/05/03 20:43:36 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-Intern::Intern() {
-	_forms[0].name = "shruberry creation";
-	_forms[0].fptr;
-}
+Intern::Intern() {}
 
 Intern::Intern(Intern const &src) {
 	*this = src;
@@ -45,6 +42,9 @@ Form	*Intern::makeForm(const std::string form, const std::string target) const {
 		std::cout << "Intern creates PresidentialPardonForm" << std::endl;
 		return (new PresidentialPardonForm(target));
 	}
-	return (NULL);
+	throw(Intern::FormNotFoundException());
 }
 
+const char	*Intern::FormNotFoundException::what() const throw() {
+	return ("Form not found");
+}

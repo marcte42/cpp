@@ -7,12 +7,18 @@
 
 int main()
 {
-	Intern someRandomIntern;
-	Form* rrf;
-	rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
-
-	Bureaucrat marc("Marc", 1);
-	marc.signForm(*rrf);
-	marc.executeForm(*rrf);
+	try {
+		Bureaucrat marc("Marc", 1);
+		Intern someRandomIntern;
+		Form* rrf;
+	
+		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		marc.signForm(*rrf);
+		marc.executeForm(*rrf);
+		delete rrf;
+	}
+	catch (std::exception &e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 	return (0);
 }
