@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <stdlib.h>
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form
