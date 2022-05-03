@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <string>
-# include <stdlib.h>
 # include "Form.hpp"
 
-class RobotomyRequestForm : public Form
+class PresidentialPardonForm : public Form
 {
 	public:
-		RobotomyRequestForm();
-		RobotomyRequestForm(const std::string target);
-		RobotomyRequestForm(RobotomyRequestForm const &src);
-		virtual ~RobotomyRequestForm();
+		PresidentialPardonForm();
+		PresidentialPardonForm(const std::string target);
+		PresidentialPardonForm(PresidentialPardonForm const &src);
+		virtual ~PresidentialPardonForm();
 
-		virtual RobotomyRequestForm 		&operator=(const RobotomyRequestForm &rhs);
+		virtual PresidentialPardonForm 		&operator=(const PresidentialPardonForm &rhs);
 
 		virtual void	action() const;
 };
