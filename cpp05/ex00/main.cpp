@@ -4,8 +4,14 @@
 int main()
 {
 	Bureaucrat marc("Marc", 13);
+	Bureaucrat john(marc);
+	Bureaucrat boris("Boris", 26);
 
 	std::cout << marc << std::endl;
+	std::cout << john << std::endl;
+	std::cout << boris << std::endl;
+	boris = marc;
+	std::cout << boris << std::endl;
 	try {
 		Bureaucrat tony("Tony", -10);
 	}
