@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+        */
+/*   By: mterkhoy <mterkhoy@42.stud.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:42:53 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/05/03 20:43:36 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:56:54 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,22 @@ Intern	&Intern::operator=(Intern const &rhs) {
 
 Form	*Intern::makeForm(const std::string form, const std::string target) const {
 
-	if (form.compare("shrubbery creation") == 0) {
-		std::cout << "Intern creates ShrubberyCreationForm" << std::endl;
-		return (new ShrubberyCreationForm(target));
+	int index = -1;
+	std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	for (int i = 0; i < 3; i++)
+		if (forms[i].compare(form) == 0)
+			index = i;
+	switch (index)
+	{
+		case 0:
+			return (new ShrubberyCreationForm(target));
+		case 1:
+			return (new RobotomyRequestForm(target));
+		case 2:
+			return (new PresidentialPardonForm(target));
+		default :
+			throw(Intern::FormNotFoundException());
 	}
-	if (form.compare("robotomy request") == 0) {
-		std::cout << "Intern creates RobotomyRequestForm" << std::endl;
-		return (new RobotomyRequestForm(target));
-	}
-	if (form.compare("presidential pardon") == 0) {
-		std::cout << "Intern creates PresidentialPardonForm" << std::endl;
-		return (new PresidentialPardonForm(target));
-	}
-	throw(Intern::FormNotFoundException());
 }
 
 const char	*Intern::FormNotFoundException::what() const throw() {

@@ -11,8 +11,16 @@ int main()
 		Bureaucrat marc("Marc", 1);
 		Intern someRandomIntern;
 		Form* rrf;
-	
+
 		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		marc.signForm(*rrf);
+		marc.executeForm(*rrf);
+		delete rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		marc.signForm(*rrf);
+		marc.executeForm(*rrf);
+		delete rrf;
+		rrf = someRandomIntern.makeForm("lol", "Bender");
 		marc.signForm(*rrf);
 		marc.executeForm(*rrf);
 		delete rrf;
