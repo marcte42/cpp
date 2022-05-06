@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mterkhoy <mterkhoy@42.stud.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:42:53 by mterkhoy          #+#    #+#             */
-/*   Updated: 2022/04/28 13:13:18 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:01:37 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src) {
 Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs) {
-	(std::string)_name = rhs._name;
+	const_cast<std::string&>(_name) = rhs._name;
 	this->_grade = rhs._grade;
 	return (*this);
 }

@@ -28,11 +28,10 @@ Form::Form(Form const &src) {
 Form::~Form() {}
 
 Form	&Form::operator=(Form const &rhs) {
-	(std::string)_name = rhs._name;
+	const_cast<std::string&>(_name) = rhs._name;
 	_signed = rhs.getSigned();
 	_signGrade = rhs.getSignGrade();
 	_executeGrade = rhs.getExecuteGrade();
-	(std::string)_target = rhs.getTarget();
 	return (*this);
 }
 
