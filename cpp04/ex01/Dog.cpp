@@ -1,56 +1,34 @@
 #include "Dog.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
 Dog::Dog()
 {
-	this->type = "Dog";
-	this->brain = new Brain();
-	std::cout << "Dog constructed !" << std::endl;
+	_type = "Dog";
+	_brain = new Brain();
+	std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog( const Dog & src )
+Dog::Dog(const Dog &src) : Animal(src)
 {
+	*this = src;
+	std::cout << "Dog constructor called" << std::endl;
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
 
 Dog::~Dog()
 {
-	delete brain;
-	std::cout << "Dog destructed !" << std::endl;
+	delete _brain;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-Dog &				Dog::operator=( Dog const & rhs )
+Dog &Dog::operator=(Dog const &rhs)
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	_type = rhs._type;
+	delete _brain;
+	_brain = new Brain();
+	*_brain = *rhs._brain;
 	return *this;
 }
 
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-void Dog::makeSound() const {
-	std::cout << "Bark bark !" << std::endl;
+void Dog::makeSound() const
+{
+	std::cout << "Dog sound !" << std::endl;
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

@@ -1,24 +1,20 @@
 #ifndef CAT_HPP
-# define CAT_HPP
+#define CAT_HPP
 
-# include <iostream>
-# include <string>
-# include "Animal.hpp"
+#include <iostream>
+#include <string>
+#include "Animal.hpp"
 
-class Cat : public Animal {
+class Cat : public Animal
+{
+public:
+	Cat();
+	Cat(Cat const &src);
+	virtual ~Cat();
 
-	public:
+	Cat &operator=(Cat const &rhs);
 
-		Cat();
-		Cat( Cat const & src );
-		~Cat();
-
-		Cat &		operator=( Cat const & rhs );
-
-		void makeSound() const;
-
+	void makeSound() const;
 };
-
-std::ostream &			operator<<( std::ostream & o, Cat const & i );
 
 #endif

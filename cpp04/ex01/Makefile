@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
+#    By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/04/04 22:15:06 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/05/07 20:09:50 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex
 
 CC      = g++
-CFLAGS = -g -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
 				Animal.cpp \
@@ -23,7 +23,7 @@ SRCS =          main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-.c.o:
+.cpp.o:
 		$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(OBJS)

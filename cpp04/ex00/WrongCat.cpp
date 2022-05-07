@@ -1,59 +1,28 @@
 #include "WrongCat.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
-WrongCat::WrongCat()
+WrongCat::WrongCat() : _type("WrongCat")
 {
-	this->type = "WrongCat";
+	std::cout << "WrongCat constructor called" << std::endl;
 }
 
-WrongCat::WrongCat( const WrongCat & src )
+WrongCat::WrongCat(const WrongCat &src) : WrongAnimal(src)
 {
+	*this = src;
+	std::cout << "WrongCat constructor called" << std::endl;
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
 
 WrongCat::~WrongCat()
 {
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-WrongCat &				WrongCat::operator=( WrongCat const & rhs )
+WrongCat &WrongCat::operator=(WrongCat const &rhs)
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	_type = rhs._type;
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, WrongCat const & i )
+void WrongCat::makeSound() const
 {
-	//o << "Value = " << i.getValue();
-	return o;
+	std::cout << "WrongCat sound !" << std::endl;
 }
-
-
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-void WrongCat::makeSound() const {
-	std::cout << "Miaou !" << std::endl;
-}
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

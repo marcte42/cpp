@@ -1,56 +1,29 @@
 #include "Animal.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
-Animal::Animal() : type("Animal")
+Animal::Animal() : _type("Animal")
 {
-	std::cout << "Animal constructed !" << std::endl;
+	std::cout << "Animal constructor called" << std::endl;
 }
 
-Animal::Animal( const Animal & src )
+Animal::Animal(const Animal &src)
 {
+	*this = src;
+	std::cout << "Animal constructor called" << std::endl;
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
 
 Animal::~Animal()
 {
-	std::cout << "Animal destructed !" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-Animal &				Animal::operator=( Animal const & rhs )
+Animal &Animal::operator=(Animal const &rhs)
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	std::cout << "Animal = operator called" << std::endl;
+	_type = rhs._type;
 	return *this;
 }
 
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-void Animal::makeSound() const {
+void Animal::makeSound() const
+{
 	std::cout << "Animal sound !" << std::endl;
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-std::string Animal::getType() const {
-	return this->type;
-}
-
-/* ************************************************************************** */

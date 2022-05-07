@@ -1,24 +1,23 @@
 #ifndef BRAIN_HPP
-# define BRAIN_HPP
+#define BRAIN_HPP
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 
 class Brain
 {
 
-	public:
+public:
+	Brain();
+	Brain(Brain const &src);
+	~Brain();
 
-		std::string ideas[100];
+	Brain &operator=(Brain const &rhs);
 
-		Brain();
-		Brain( Brain const & src );
-		~Brain();
-
-		Brain &		operator=( Brain const & rhs );
-
+private:
+	std::string _ideas[100];
 };
 
-std::ostream &			operator<<( std::ostream & o, Brain const & i );
+std::ostream &operator<<(std::ostream &o, Brain const &i);
 
 #endif

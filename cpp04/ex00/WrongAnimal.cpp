@@ -1,61 +1,28 @@
 #include "WrongAnimal.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
-WrongAnimal::WrongAnimal() : type("WrongAnimal")
+WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal( const WrongAnimal & src )
+WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
+	*this = src;
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
 
 WrongAnimal::~WrongAnimal()
 {
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	_type = rhs._type;
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, WrongAnimal const & i )
+void WrongAnimal::makeSound() const
 {
-	//o << "Value = " << i.getValue();
-	return o;
+	std::cout << "WrongAnimal sound !" << std::endl;
 }
-
-
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-void WrongAnimal::makeSound() const {
-	std::cout << "Animal sound !" << std::endl;
-}
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-std::string WrongAnimal::getType() const {
-	return this->type;
-}
-
-/* ************************************************************************** */

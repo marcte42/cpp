@@ -1,25 +1,23 @@
 #ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-# include <iostream>
-# include <string>
-# include "WrongAnimal.hpp"
+#include <iostream>
+#include <string>
+#include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
 {
+public:
+	WrongCat();
+	WrongCat(WrongCat const &src);
+	virtual ~WrongCat();
 
-	public:
+	WrongCat &operator=(WrongCat const &rhs);
 
-		WrongCat();
-		WrongCat( WrongCat const & src );
-		~WrongCat();
+	void makeSound() const;
 
-		WrongCat &		operator=( WrongCat const & rhs );
-
-		void makeSound() const;
-
+protected:
+	std::string _type;
 };
 
-std::ostream &			operator<<( std::ostream & o, WrongCat const & i );
-
-#endif /* ******************************************************** WRONGCAT_H */
+#endif
