@@ -55,12 +55,12 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	if (_inventory[idx])
+	if (idx >= 0 && idx < 4 && _inventory[idx])
 		_inventory[idx] = NULL; // Besoin de trouver un moyen de garder le pointeur en memoire afin de delete a la fin
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-	if (_inventory[idx])
+	if (idx >= 0 && idx < 4 && _inventory[idx])
 		_inventory[idx]->use(target);
 }
