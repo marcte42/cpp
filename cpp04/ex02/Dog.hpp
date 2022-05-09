@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 public:
 	Dog();
@@ -16,6 +17,7 @@ public:
 	void makeSound() const;
 
 private:
+	Brain *_brain;
 };
 
 #endif

@@ -6,20 +6,21 @@
 #    By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/05/09 21:19:41 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/05/09 21:47:45 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex
 
 CC      = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
-				Animal.cpp \
-				Dog.cpp \
-				Cat.cpp \
-				Brain.cpp
+				AMateria.cpp \
+				Character.cpp \
+				Ice.cpp \
+				Cure.cpp \
+				MateriaSource.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

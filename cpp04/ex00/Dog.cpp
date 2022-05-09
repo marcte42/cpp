@@ -2,14 +2,14 @@
 
 Dog::Dog()
 {
-	_type = "Dog";
 	std::cout << "Dog constructor called" << std::endl;
+	_type = "Dog";
 }
 
 Dog::Dog(const Dog &src) : Animal(src)
 {
-	*this = src;
 	std::cout << "Dog constructor called" << std::endl;
+	*this = src;
 }
 
 Dog::~Dog()

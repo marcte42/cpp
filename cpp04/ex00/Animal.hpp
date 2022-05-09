@@ -11,12 +11,13 @@ public:
 	Animal(Animal const &src);
 	virtual ~Animal();
 
-	Animal &operator=(Animal const &rhs);
-
 	virtual void makeSound() const;
 
 protected:
 	std::string _type;
+
+private:
+	Animal &operator=(Animal const &rhs);
 };
 
 #endif

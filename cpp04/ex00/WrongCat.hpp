@@ -12,12 +12,10 @@ public:
 	WrongCat(WrongCat const &src);
 	virtual ~WrongCat();
 
-	WrongCat &operator=(WrongCat const &rhs);
-
 	void makeSound() const;
 
-protected:
-	std::string _type;
+private:
+	WrongCat &operator=(WrongCat const &rhs);
 };
 
 #endif

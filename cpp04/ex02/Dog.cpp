@@ -7,7 +7,7 @@ Dog::Dog()
 	_brain = new Brain();
 }
 
-Dog::Dog(const Dog &src) : Animal(src)
+Dog::Dog(const Dog &src) : AAnimal(src)
 {
 	std::cout << "Dog constructor called" << std::endl;
 	_brain = new Brain();

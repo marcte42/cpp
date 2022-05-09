@@ -3,19 +3,21 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 public:
 	Cat();
 	Cat(Cat const &src);
 	virtual ~Cat();
-	Cat &operator=(Cat const &rhs);
-
 	void makeSound() const;
 
+	Cat &operator=(Cat const &rhs);
+
 private:
+	Brain *_brain;
 };
 
 #endif

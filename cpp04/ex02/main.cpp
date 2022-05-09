@@ -1,10 +1,10 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main()
 {
-	Animal *tabAnimal[100];
+	AAnimal *tabAnimal[100];
 
 	for (int i = 0; i < 50; i++)
 		tabAnimal[i] = new Dog();
@@ -44,6 +44,8 @@ int main()
 		delete k;
 		delete l;
 	}
+
+	// Animal *test = new Animal();
 
 	return 0;
 }

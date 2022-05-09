@@ -11,12 +11,13 @@ public:
 	WrongAnimal(WrongAnimal const &src);
 	~WrongAnimal();
 
-	WrongAnimal &operator=(WrongAnimal const &rhs);
-
 	void makeSound() const;
 
 protected:
 	std::string _type;
+
+private:
+	WrongAnimal &operator=(WrongAnimal const &rhs);
 };
 
 #endif

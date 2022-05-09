@@ -6,14 +6,14 @@
 #    By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/05/07 20:43:47 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/05/09 21:19:46 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex
 
-CC      = g++
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CC      = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
 				Animal.cpp \

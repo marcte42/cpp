@@ -12,10 +12,9 @@ public:
 	Cat();
 	Cat(Cat const &src);
 	virtual ~Cat();
+	void makeSound() const;
 
 	Cat &operator=(Cat const &rhs);
-
-	void makeSound() const;
 
 private:
 	Brain *_brain;
