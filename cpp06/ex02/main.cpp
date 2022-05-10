@@ -30,22 +30,47 @@ void identify(Base &p)
 {
 	std::cout << "Identification by reference" << std::endl;
 
-	if (dynamic_cast<A *>(&p))
+	try
+	{
+		dynamic_cast<A &>(p);
 		std::cout << "Identity: A" << std::endl;
-	else if (dynamic_cast<B *>(&p))
+		return;
+	}
+	catch (std::exception &e)
+	{
+	}
+	try
+	{
+		dynamic_cast<B &>(p);
 		std::cout << "Identity: B" << std::endl;
-	else if (dynamic_cast<C *>(&p))
+		return;
+	}
+	catch (std::exception &e)
+	{
+	}
+	try
+	{
+		dynamic_cast<C &>(p);
 		std::cout << "Identity: C" << std::endl;
-	else
-		std::cout << "Identity: Unknown" << std::endl;
+		return;
+	}
+	catch (std::exception &e)
+	{
+	}
+	std::cout << "Identity: Unknown" << std::endl;
 }
 
 int main()
 {
 	identify(generate());
 
-	A test;
-	identify(test);
+	A a;
+	B b;
+	C c;
+
+	identify(a);
+	identify(b);
+	identify(c);
 	identify(NULL);
 
 	return 0;
