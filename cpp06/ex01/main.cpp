@@ -12,7 +12,7 @@ Data *deserialize(uintptr_t raw)
     return (reinterpret_cast<Data *>(raw));
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     Data *data = new Data;
 
@@ -20,7 +20,5 @@ int main(int argc, char const *argv[])
     std::cout << serialize(data) << std::endl;
     std::cout << deserialize(serialize(data)) << std::endl;
 
-    static_cast<void>(argc);
-    static_cast<void>(argv);
     return 0;
 }
