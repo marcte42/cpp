@@ -1,28 +1,20 @@
 #include <iostream>
 #include "whatever.hpp"
 
-int main()
+int main(void)
 {
-    int a = 5;
-    int b = 2;
-    float c = 5.1f;
-    float d = 5.4f;
-    char e = 'e';
-    char f = 'f';
+    int a = 2;
+    int b = 3;
 
-    std::cout << min<int>(a, b) << std::endl;
-    std::cout << min<float>(c, d) << std::endl;
-    std::cout << min<char>(e, f) << std::endl;
-    std::cout << max<int>(a, b) << std::endl;
-    std::cout << max<float>(c, d) << std::endl;
-    std::cout << max<char>(e, f) << std::endl;
-
-    swap<int>(a, b);
-    swap<float>(c, d);
-    swap<char>(e, f);
-    std::cout << a << std::endl;
-    std::cout << c << std::endl;
-    std::cout << e << std::endl;
-
+    ::swap(a, b);
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
+    std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min(c, d) << std::endl;
+    std::cout << "max( c, d ) = " << ::max(c, d) << std::endl;
     return 0;
 }
