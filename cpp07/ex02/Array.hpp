@@ -36,10 +36,11 @@ public:
 
 	Array &operator=(const Array &rhs)
 	{
-		delete[] _array;
+		if (_array)
+			delete[] _array;
 		_size = rhs.size();
 		_array = new T[_size];
-		for (int i = 0; i < _size; i++)
+		for (unsigned int i = 0; i < _size; i++)
 			_array[i] = rhs._array[i];
 		return *this;
 	}
