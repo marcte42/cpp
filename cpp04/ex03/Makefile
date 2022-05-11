@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+         #
+#    By: mterkhoy <mterkhoy@42.stud.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/05/09 21:47:45 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/05/11 14:26:49 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex
 
 CC      = c++
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =          main.cpp \
 				AMateria.cpp \
