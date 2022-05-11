@@ -31,5 +31,5 @@ void	RobotomyRequestForm::action() const {
 	if (rand() % 2)
 		std::cout << this->getTarget() << " was successfully robotomised" << std::endl;
 	else
-		std::cout << "Failed to robotomised "  << this->getTarget() << std::endl;
+		std::cout << "Failed to robotomise "  << this->getTarget() << std::endl;
 }
