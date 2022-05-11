@@ -45,7 +45,8 @@ int main()
 		delete l;
 	}
 
-	// Animal *test = new Animal();
+	// AAnimal *test = new AAnimal();
+	// test->makeSound();
 
 	return 0;
 }
