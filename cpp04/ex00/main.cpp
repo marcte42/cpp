@@ -18,14 +18,14 @@ int main()
 	delete i;
 	delete j;
 
-	// const WrongAnimal *k = new WrongAnimal();
-	// const WrongAnimal *l = new WrongCat();
+	const WrongAnimal *k = new WrongAnimal();
+	const WrongAnimal *l = new WrongCat();
 
-	// k->makeSound();
-	// l->makeSound();
+	k->makeSound();
+	l->makeSound();
 
-	// delete k;
-	// delete l;
+	delete k;
+	delete l;
 
 	return 0;
 }
