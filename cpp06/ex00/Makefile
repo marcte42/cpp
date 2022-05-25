@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mterkhoy <mterkhoy@stud.42.fr>             +#+  +:+       +#+         #
+#    By: mterkhoy <mterkhoy@42.stud.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 20:33:22 by mterkhoy          #+#    #+#              #
-#    Updated: 2022/05/04 20:17:00 by mterkhoy         ###   ########.fr        #
+#    Updated: 2022/05/25 12:07:58 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex
+NAME = convert
 
 CC      = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
